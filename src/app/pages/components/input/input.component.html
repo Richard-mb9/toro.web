@@ -1,0 +1,11 @@
+<form>
+    <label [ngStyle]="labelStyle" for={{inputName}} #label>{{inputName}}</label>
+    <input
+        type="text"
+        name={{inputName}}
+        (focus)="handleFocus()"
+        (change)="handleValue($event)"
+        value={{value}}
+    >
+    <p *ngIf="textError !== ''" class="error">{{textError}}</p>
+</form>

@@ -1,0 +1,20 @@
+<app-loading [show]="isLoading"></app-loading>
+<div class="card">
+    <div class="icon-container">
+        <img [src]="'assets/images/lock_FILL1_wght400_GRAD0_opsz48.png'" alt="">
+    </div>
+    <div *ngIf="requestErrorAlert !== ''" class="alert">
+        <p>{{requestErrorAlert}}</p>
+    </div>
+    <div class="card-content">
+        <app-input inputName="Nome" (setValue)="setName($event)" [value]="name" [textError]="nameError"></app-input>
+        <app-input inputName="Email"  (setValue)="setEmail($event)" [value]="email" [textError]="emailError"></app-input>
+        <app-input inputName="Senha"  (setValue)="setPassword($event)" [value]="password" [textError]="passwordError"></app-input>
+        <app-input inputName="Confirme a Senha"  (setValue)="setConfirmPassword($event)" [value]="confirmPassword" [textError]="confirmPasswordError"></app-input>
+        <app-input inputName="CPF" (setValue)="setCpf($event)" [value]="cpf" [textError]="cpfError"></app-input>
+    
+        <button (click)="save()">Salvar</button>
+        <a routerLink="/login"><button>Login</button></a>
+        
+      </div>
+</div>

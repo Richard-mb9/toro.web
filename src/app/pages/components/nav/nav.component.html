@@ -1,0 +1,15 @@
+
+<div class="nav">
+    <div class="user-info">
+        <span>Ola Richard</span>
+    </div>
+    <div class="nav-actions">
+        <div class="actions">
+            <div  [ngStyle]="{marginTop: marginTopAccountData}" class="account-data">
+                <app-card-account></app-card-account>
+            </div>
+            <button (click)="setShowAccountData()">{{textButtonShowAccountData}}</button>
+            <button>Logout</button>
+        </div>
+    </div>
+</div>

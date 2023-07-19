@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-title">
+        <span>Seus Ativos</span>
+    </div>
+    <div class="card-content">
+        <ul>
+            <li class="assets-headers">
+                <span>Nome</span>
+                <div class="header-info">
+                    <div class="header-value">
+                        <span >Valor</span>
+                    </div>
+                    <div class="header-quantity">
+                        <span >quantidade</span>
+                    </div>
+                    
+                </div>
+            </li>
+            <li *ngFor="let asset of assets" class="assets-item">
+                <span>{{asset.name}}</span>
+                <div class="asset-info">
+                    <div class="asset-value">
+                        <span>R$ {{asset.price}}</span>
+                    </div>
+                    <div class="asset-quantity">
+                        <span >{{asset.quantity}}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="total-value">
+        <span>Total em ativos: R$ 349,00</span>
+    </div>
+</div>

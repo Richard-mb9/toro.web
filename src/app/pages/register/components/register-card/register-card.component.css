@@ -1,0 +1,69 @@
+
+.card{
+    width: 350px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 30px 16px;
+    box-sizing: border-box;
+}
+
+.icon-container{
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.alert{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: red;
+}
+
+
+form {
+    max-width: calc(100% - 22px);
+}
+
+form input{
+    border:1px solid #bbb;
+    border-radius: 3px;
+    height: 30px; 
+    width: 100%;
+    padding:5px 10px;
+}
+
+.input-name{
+    background-color: transparent !important;
+}
+
+.input-name:valid {
+    background-color: pink !important;
+}
+
+form:focus-within input{
+    outline: solid 1px black;
+}
+
+button {
+    background-color: black;
+    color: rgb(6, 8, 114);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+
+
+
+  

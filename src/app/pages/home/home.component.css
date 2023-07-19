@@ -1,0 +1,18 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.content{
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

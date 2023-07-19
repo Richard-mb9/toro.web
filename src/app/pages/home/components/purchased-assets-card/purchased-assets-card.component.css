@@ -1,0 +1,65 @@
+.card{
+    width: 350px;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title{
+    font-size: 13px;
+    text-align: left;
+    background-color: rgb(6, 8, 114);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card-content{
+    padding: 10px;
+    box-sizing: border-box;
+    height: calc(100% -100px);
+    overflow-y: scroll;
+}
+
+.asset-info, .header-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.assets-item, .assets-headers{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: solid 1px #ccc;
+    color: rgb(6, 8, 114);
+}
+
+.assets-headers{
+    font-size: 10px;
+}
+
+.asset-value, .header-value, .asset-quantity, .header-quantity{
+    margin: 0 10px;
+    color: rgb(6, 8, 114);
+}
+
+.asset-quantity, .header-quantity{
+    width: 50px;
+    text-align: right;
+}
+
+.total-value{
+    display: flex;
+    background-color: rgb(6, 8, 114);
+    padding: 15px;
+    margin-top: 10px;
+    color: white;
+}

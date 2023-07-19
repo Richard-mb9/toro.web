@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-title">
+        <span>Todos os Ativos</span>
+    </div>
+    <div class="card-content">
+        <ul>
+            <li *ngFor="let asset of allAssets" class="assets-item">
+                <span>{{asset.name}}</span>
+                <div>
+                    <span class="asset-value">R$ {{asset.price}}</span>
+                    <button>Comprar</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
