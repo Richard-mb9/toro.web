@@ -45,4 +45,5 @@ button:hover{
 .account-data{
     margin-top: 60px;
     transition: margin-top 1s;
+    z-index: 3;
 }

@@ -9,7 +9,7 @@ export class InputComponent {
   @Input() inputName: string = "";
 
   @Input() textError: string = "";
-
+  @Input() isPassword: boolean = false;
   @Input() value!: string;
   @Output() setValue: EventEmitter<any>  = new EventEmitter();
 

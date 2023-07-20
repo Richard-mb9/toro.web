@@ -1,12 +1,13 @@
+<app-loading></app-loading>
 <app-nav></app-nav>
 <div class="container">
     <div class="infos">
-        <app-card-info originValue="Saldo em conta" value="568, 00"></app-card-info>
-        <app-card-info originValue="Saldo em Ativos" value="98,00"></app-card-info>
-        <app-card-info originValue="Patrimonio Total" value="636, 00"></app-card-info>
+        <app-card-info originValue="Saldo em conta" [value]="checkingAccountAmount"></app-card-info>
+        <app-card-info originValue="Saldo em Ativos" [value]="assetBalance"></app-card-info>
+        <app-card-info originValue="Patrimonio Total" [value]="consolidated"></app-card-info>
     </div>
     <div class="content">
-        <app-purchased-assets-card></app-purchased-assets-card>
+        <app-purchased-assets-card [assets]="positions" [assetBalance]="assetBalance"></app-purchased-assets-card>
         <app-card-all-assets [assets]="assets"></app-card-all-assets>
         <app-card-trends [trends]="trends"></app-card-trends>
     </div>

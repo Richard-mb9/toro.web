@@ -8,15 +8,17 @@
 }
 
 .icon-container{
+    margin: 0;
+    margin-top: 30px;
     width: 100%;
-    padding: 5px;
+    padding: 20px 0 10px 0;
     display: flex;
     justify-content: center;
-    z-index: 99999;
+    box-sizing: border-box;
 }
 
 .card-content{
-    padding: 16px;
+    padding: 0 16px;
 }
 
 
@@ -68,6 +70,15 @@ button {
 
 button:hover{
     opacity: 0.8;
+}
+
+.alert{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 18px;
+    color: red;
 }
 
 

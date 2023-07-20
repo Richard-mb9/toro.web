@@ -1,22 +1,25 @@
+<app-loading [show]="isLoading"></app-loading>
 <div class="card">
     <div class="icon-container">
         <img [src]="'assets/images/lock_FILL1_wght400_GRAD0_opsz48.png'" alt="">
     </div>
+    <div *ngIf="requestErrorAlert !== ''" class="alert">
+      <p>{{requestErrorAlert}}</p>
+    </div>
     <div class="card-content">
-      <form >
-        <label for="email">Email</label>
-        <input type="text" name="email">
-      </form>
-    
-      <form >
-        <label for="psw">Senha</label>
-        <input type="password" name="psw" required>
-      </form>
-    
-        <button>Login</button>
+      <app-input 
+        inputName="Email" 
+        (setValue)="setEmail($event)"
+        [value]="email"
+        [textError]="emailError"
+      ></app-input>
+      <app-input 
+        inputName="Senha" 
+        (setValue)="setPassword($event)"
+        [value]="password"
+        [isPassword]="true"
+      ></app-input>
+        <button (click)="send()">Login</button>
         <a routerLink="/register"><button>Cadastrar</button></a>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
       </div>
 </div>

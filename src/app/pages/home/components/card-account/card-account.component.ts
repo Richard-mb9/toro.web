@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-account',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-account.component.css']
 })
 export class CardAccountComponent {
-  
+  @Input() branch: string = "";
+  @Input() bank: string = "";
+  @Input() account:string = "";
 }

@@ -20,7 +20,7 @@
                 <span>{{asset.name}}</span>
                 <div class="asset-info">
                     <div class="asset-value">
-                        <span>R$ {{asset.price}}</span>
+                        <span>R$ {{asset.current_price}}</span>
                     </div>
                     <div class="asset-quantity">
                         <span >{{asset.quantity}}</span>
@@ -30,6 +30,6 @@
         </ul>
     </div>
     <div class="total-value">
-        <span>Total em ativos: R$ 349,00</span>
+        <span>Total em ativos: R$ {{assetBalance}}</span>
     </div>
 </div>

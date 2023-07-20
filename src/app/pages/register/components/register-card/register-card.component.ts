@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {isAxiosError} from 'axios';
+import { auth } from 'src/app/commons/security';
 import { authenticate } from 'src/app/services/authApi';
 
 import { createUser } from 'src/app/services/usersApi';
@@ -109,8 +110,8 @@ export class RegisterCardComponent {
         await createUser(data);
         try{
           const response = await authenticate({email: this.email ,password: this.password})
-          console.log(response.data)
-          localStorage.setItem('accessToken', response.data.access_token)
+          const accessToken = response.data.access_token
+          auth.setToken(accessToken)
           this.router.navigate(['']);
         } catch(error){
           this.router.navigate(['/login']);

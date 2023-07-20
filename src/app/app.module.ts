@@ -22,6 +22,7 @@ import { CardAccountComponent } from './pages/home/components/card-account/card-
 import { PurchasedAssetsCardComponent } from './pages/home/components/purchased-assets-card/purchased-assets-card.component';
 import { InputComponent } from './pages/components/input/input.component';
 import { LoadingComponent } from './pages/components/loading/loading.component';
+import { ModalCompraComponent } from './pages/components/modal-compra/modal-compra.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoadingComponent } from './pages/components/loading/loading.component';
     CardAccountComponent,
     PurchasedAssetsCardComponent,
     InputComponent,
-    LoadingComponent
+    LoadingComponent,
+    ModalCompraComponent
   ],
   imports: [
     BrowserModule,

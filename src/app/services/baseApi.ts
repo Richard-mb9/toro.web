@@ -3,10 +3,12 @@ import {camelizeKeys, decamelizeKeys} from 'humps';
 
 
 import {BASE_URL} from '../../environment';
+import { auth } from '../commons/security';
 
 const createApi = ()=>{
     const api = axios.create({
-        baseURL: BASE_URL
+        baseURL: BASE_URL,
+        headers: {'Authorization': `Bearer ${auth.accessToken}`}
     });
     
     api.interceptors.response.use((response: AxiosResponse)=>{

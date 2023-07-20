@@ -1,6 +1,6 @@
 .card{
     width: 120px;
-    height: 100px;
+    height: 115px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: solid 1px #999;
 }
 
 .account-item span{

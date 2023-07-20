@@ -6,6 +6,7 @@
         (focus)="handleFocus()"
         (change)="handleValue($event)"
         value={{value}}
+        [type]="isPassword ? 'password' : 'text'"
     >
     <p *ngIf="textError !== ''" class="error">{{textError}}</p>
 </form>
