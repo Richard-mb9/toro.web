@@ -78,3 +78,8 @@
     font-weight: bolder;
     font-size: 15px;
 }
+
+.alert{
+    color: red;
+    text-align: center;
+}

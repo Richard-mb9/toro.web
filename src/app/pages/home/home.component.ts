@@ -18,9 +18,9 @@ export class HomeComponent {
   test: number = 0;
   
 
-  checkingAccountAmount: string = "0.00";
-  consolidated: string = "0.00";
-  assetBalance: string = "0.00"
+  checkingAccountAmount: number = 0.00;
+  consolidated: number = 0;
+  assetBalance: number = 0.00
   positions: IPurchasedAsset[] = [];
   
 
@@ -29,7 +29,7 @@ export class HomeComponent {
     this.positions.forEach((asset)=>{
       total += (parseFloat(asset.current_price.toString())) * asset.quantity;
     })
-    this.assetBalance = total.toString();
+    this.assetBalance = total;
   }
 
   async loadAllAssets(){
@@ -44,8 +44,8 @@ export class HomeComponent {
 
   async loadUserPosition(){
     const response = await getPosition();
-    this.checkingAccountAmount = response.data.checking_account_amount.toString()
-    this.consolidated = response.data.consolidated.toString()
+    this.checkingAccountAmount = parseFloat(response.data.checking_account_amount.toString());
+    this.consolidated = parseFloat(response.data.consolidated.toString());
     this.positions = response.data.positions;
     this.loadAssetBalance();
   }

@@ -10,7 +10,8 @@ export class InputComponent {
 
   @Input() textError: string = "";
   @Input() isPassword: boolean = false;
-  @Input() value!: string;
+  @Input() isNumber: boolean = false;
+  @Input() value!: string | number;
   @Output() setValue: EventEmitter<any>  = new EventEmitter();
 
 
@@ -43,6 +44,15 @@ export class InputComponent {
 
   inputError = {
     border:'1px solid #bbb',
+  }
+
+  type: string = 'text';
+
+  ngOnInit(){
+    if(this.isNumber) {
+      this.type = 'number'
+    }
+    else if (this.isPassword) this.type = 'password'
   }
 
   handleFocus(){

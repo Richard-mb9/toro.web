@@ -8,5 +8,9 @@ import { IPurchasedAsset } from 'src/app/commons/interfaces';
 })
 export class PurchasedAssetsCardComponent {
   @Input() assets: IPurchasedAsset[] = []
-  @Input() assetBalance: string = '0.00';
+  @Input() assetBalance: number = 0.00;
+
+  teste(){
+    this.assetBalance.toFixed(2)
+  }
 }

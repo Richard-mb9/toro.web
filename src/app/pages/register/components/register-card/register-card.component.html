@@ -9,8 +9,8 @@
     <div class="card-content">
         <app-input inputName="Nome" (setValue)="setName($event)" [value]="name" [textError]="nameError"></app-input>
         <app-input inputName="Email"  (setValue)="setEmail($event)" [value]="email" [textError]="emailError"></app-input>
-        <app-input inputName="Senha"  (setValue)="setPassword($event)" [value]="password" [textError]="passwordError"></app-input>
-        <app-input inputName="Confirme a Senha"  (setValue)="setConfirmPassword($event)" [value]="confirmPassword" [textError]="confirmPasswordError"></app-input>
+        <app-input [isPassword]="true" inputName="Senha"  (setValue)="setPassword($event)" [value]="password" [textError]="passwordError"></app-input>
+        <app-input [isPassword]="true" inputName="Confirme a Senha"  (setValue)="setConfirmPassword($event)" [value]="confirmPassword" [textError]="confirmPasswordError"></app-input>
         <app-input inputName="CPF" (setValue)="setCpf($event)" [value]="cpf" [textError]="cpfError"></app-input>
     
         <button (click)="save()">Salvar</button>
