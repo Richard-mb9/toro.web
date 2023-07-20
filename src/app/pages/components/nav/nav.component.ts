@@ -59,7 +59,7 @@ export class NavComponent {
 
   logOut(){
     auth.clear();
-    this.router.navigate(['/login']);
+    window.location.reload();
   }
 
   async ngOnInit(){

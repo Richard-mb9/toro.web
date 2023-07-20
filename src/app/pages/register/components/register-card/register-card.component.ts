@@ -17,6 +17,12 @@ export class RegisterCardComponent {
       private router: Router
   ) { }
 
+  async ngOnInit(){
+    if(auth.isAuthenticated){
+      this.router.navigate(['']);
+    }
+  }
+
   requestErrorAlert = ''
 
   isLoading: boolean = false;
@@ -112,7 +118,7 @@ export class RegisterCardComponent {
           const response = await authenticate({email: this.email ,password: this.password})
           const accessToken = response.data.access_token
           auth.setToken(accessToken)
-          this.router.navigate(['']);
+          window.location.reload();
         } catch(error){
           this.router.navigate(['/login']);
         }
