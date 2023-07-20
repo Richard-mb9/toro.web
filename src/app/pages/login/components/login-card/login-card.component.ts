@@ -12,7 +12,7 @@ import { authenticate } from 'src/app/services/authApi';
 export class LoginCardComponent {
   constructor(
     private router: Router
-) { }
+  ) { }
 
     ngOnInit(){
       if(auth.isAuthenticated){
