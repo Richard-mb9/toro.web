@@ -1,7 +1,7 @@
 export interface IAsset {
     symbol: string;
     name: string;
-    price: number;
+    current_price: number;
 }
 
 export interface IPurchasedAsset {
@@ -9,4 +9,11 @@ export interface IPurchasedAsset {
     name: string;
     price: number;
     quantity: number
+}
+
+export interface ITrend {
+    current_price: number;
+    symbol: string;
+    sold: number;
+    name: string;
 }

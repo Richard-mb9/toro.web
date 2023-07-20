@@ -4,38 +4,10 @@
     </div>
     <div class="card-content">
         <ul>
-            <li class="trends-item">
-                <span>Banco do Brasil</span>
+            <li *ngFor="let trend of trends" class="trends-item">
+                <span>{{trend.name}}</span>
                 <div>
-                    <span class="trends-value">R$ 35,98</span>
-                    <button>Comprar</button>
-                </div>
-            </li>
-            <li class="trends-item">
-                <span>Lojas Americanas</span>
-                <div>
-                    <span class="trends-value">R$ 35,98</span>
-                    <button>Comprar</button>
-                </div>
-            </li>
-            <li class="trends-item">
-                <span>Amazon</span>
-                <div>
-                    <span class="trends-value">R$ 35,98</span>
-                    <button>Comprar</button>
-                </div>
-            </li>
-            <li class="trends-item">
-                <span>Google</span>
-                <div>
-                    <span class="trends-value">R$ 35,98</span>
-                    <button>Comprar</button>
-                </div>
-            </li>
-            <li class="trends-item">
-                <span>Netflix</span>
-                <div>
-                    <span class="trends-value">R$ 35,98</span>
+                    <span class="trends-value">R$ {{trend.current_price}}</span>
                     <button>Comprar</button>
                 </div>
             </li>

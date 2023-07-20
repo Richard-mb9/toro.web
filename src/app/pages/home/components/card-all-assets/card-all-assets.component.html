@@ -4,10 +4,10 @@
     </div>
     <div class="card-content">
         <ul>
-            <li *ngFor="let asset of allAssets" class="assets-item">
+            <li *ngFor="let asset of assets" class="assets-item">
                 <span>{{asset.name}}</span>
                 <div>
-                    <span class="asset-value">R$ {{asset.price}}</span>
+                    <span class="asset-value">R$ {{asset.current_price}}</span>
                     <button>Comprar</button>
                 </div>
             </li>
