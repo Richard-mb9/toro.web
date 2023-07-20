@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ITrend } from 'src/app/commons/interfaces';
+import { ITrend, IAsset } from 'src/app/commons/interfaces';
 
 @Component({
   selector: 'app-card-trends',
@@ -8,4 +8,17 @@ import { ITrend } from 'src/app/commons/interfaces';
 })
 export class CardTrendsComponent {
   @Input() trends: ITrend[] = [];
+
+  currentAssetToBuy: IAsset = {} as IAsset;
+
+  showModalBuy: boolean = false;
+
+  closeModalBuy(){
+    this.showModalBuy =false;
+  }
+
+  handleShowModalBuy(asset: IAsset){
+    this.showModalBuy = true;
+    this.currentAssetToBuy = asset;
+  }
 }

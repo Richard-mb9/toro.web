@@ -8,4 +8,17 @@ import { IAsset } from 'src/app/commons/interfaces';
 })
 export class CardAllAssetsComponent {
   @Input() assets: IAsset[] = [];
+
+  currentAssetToBuy: IAsset = {} as IAsset;
+
+  showModalBuy: boolean = false;
+
+  closeModalBuy(){
+    this.showModalBuy =false;
+  }
+
+  handleShowModalBuy(asset: IAsset){
+    this.showModalBuy = true;
+    this.currentAssetToBuy = asset;
+  }
 }

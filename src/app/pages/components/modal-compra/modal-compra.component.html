@@ -1,1 +1,17 @@
-<p>modal-compra works!</p>
+<div *ngIf="show" class="background">
+    <div class="card-buy">
+        <div class="card-title">
+            <span>Quantos ativos você deseja comprar?</span>
+            <button class="button-close" (click)="handleClose()">X</button>
+        </div>
+        <div class="asset-name">
+            <span>{{asset.name}}</span>
+        </div>
+        <div>
+            <app-input inputName="Quantidade"></app-input>
+        </div>
+        <div class="actions">
+            <button class="button-buy">COMPRAR</button>
+        </div>
+    </div>
+</div>
