@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { auth } from 'src/app/commons/security';
+import {isAxiosError} from 'axios';
 
+import { auth } from 'src/app/commons/security';
 import { getAccountData } from 'src/app/services/usersApi';
 
 @Component({
@@ -43,7 +44,14 @@ export class NavComponent {
       this.account = response.data.account;
       this.name = response.data.name;
     }
-    catch(e){}
+    catch(error){
+      if(isAxiosError(error)){
+        if(error.response?.status === 401){
+          auth.clear();
+          this.router.navigate(['/login']);
+        }
+      }
+    }
     finally{
       this.isLoading = false;
     }

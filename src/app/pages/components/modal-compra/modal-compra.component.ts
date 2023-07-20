@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { isAxiosError } from 'axios';
 import { IAsset } from 'src/app/commons/interfaces';
+import { auth } from 'src/app/commons/security';
 import { createOrder } from 'src/app/services/orders';
 
 @Component({
@@ -9,6 +11,11 @@ import { createOrder } from 'src/app/services/orders';
   styleUrls: ['./modal-compra.component.css']
 })
 export class ModalCompraComponent {
+  constructor(
+    private router: Router
+  ) { }
+
+
   isLoading: boolean = false;
   @Input() show: boolean = false;
   @Output() close: EventEmitter<any>  = new EventEmitter();
@@ -41,6 +48,10 @@ export class ModalCompraComponent {
       if(isAxiosError(error)){
         if(error.response?.status === 422){
          this.textAlert = "Saldo insuficiente"
+        }
+        else if(error.response?.status === 401){
+          auth.clear()
+          this.router.navigate(['/login']);
         }
         else if(error.response?.status){
           if(error.response?.status >= 400 && error.response?.status < 500){

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IAsset ,IPurchasedAsset,ITrend, IUserPosition } from 'src/app/commons/interfaces';
 import { Router } from '@angular/router';
+import { isAxiosError } from 'axios';
+
 import { listAssets } from 'src/app/services/assetsApi';
 import { getTrends } from 'src/app/services/trends';
 import { getPosition } from 'src/app/services/usersApi';
@@ -65,7 +67,14 @@ export class HomeComponent {
       await this.loadCurrentTrends();
       await this.loadUserPosition()
     }
-    catch(e){}
+    catch(error){
+      if(isAxiosError(error)){
+        if(error.response?.status === 401){
+          auth.clear();
+          this.router.navigate(['/login']);
+        }
+      }
+    }
     finally{
       this.isLoading = false;
     }
