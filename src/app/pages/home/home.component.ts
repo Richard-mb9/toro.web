@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IAsset ,IPurchasedAsset,ITrend, IUserPosition } from 'src/app/commons/interfaces';
+import { Router } from '@angular/router';
 import { listAssets } from 'src/app/services/assetsApi';
 import { getTrends } from 'src/app/services/trends';
 import { getPosition } from 'src/app/services/usersApi';
+import { auth } from 'src/app/commons/security';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,9 @@ import { getPosition } from 'src/app/services/usersApi';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(
+    private router: Router
+  ) { }
   isLoading: boolean = false;
 
 
@@ -51,6 +56,9 @@ export class HomeComponent {
   }
 
   async ngOnInit(){
+    if(!auth.isAuthenticated){
+      this.router.navigate(['/login']);
+    }
     this.isLoading = true;
     try{
       await this.loadAllAssets();
