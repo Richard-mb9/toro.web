@@ -1,20 +1,20 @@
-<h1> Toro Backend </h1>
+<h1> Toro Web </h1>
 
-<p> Backend de uma aplicação destinada a permitir que usuarios comprem acoes, a verifiquem a tandencia do mercado. </p>
+<p> Interface de uma aplicação destinada a permitir que usuarios comprem acoes, a verifiquem a tandencia do mercado. </p>
 
-<p> Foi desenvolvida utilizando a linguagem python, junto com o framework fastapi, a orm sqlalchemy, e o banco de dados mysql</p>
+<p> Foi desenvolvida utilizando a linguagem typescript, junto com o Angularjs</p>
 
 <h2> Como executar o projeto Localmente</h2>
 <h3> Dependecias</h3>
 <ul>
     <li>acesso a internet</li>
-  <li>ter o docker, e docker-compose instalado</li>
-  <li>ter o python instalado</li>
-  <li>ter o node e npm instalado</li>
-  <li>um servidor mysql rodando no edpoint localhost:3306</li>
-  <li>um banco de dados mysql chamado toro</li>
-  <li>um banco de dados mysql chamado toro-test</li>
-  <li>backend: https://github.com/Richard-mb9/toro.backend.git
+    <li>ter o docker, e docker-compose instalado</li>
+    <li>ter o python instalado</li>
+    <li>ter o node e npm instalado</li>
+    <li>um servidor mysql rodando no edpoint localhost:3306</li>
+    <li>um banco de dados mysql chamado toro</li>
+    <li>um banco de dados mysql chamado toro-test</li>
+    <li>backend: https://github.com/Richard-mb9/toro.backend.git
 </ul>
 
 <h3> Como Executar </h3>
