@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,6 +6,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
+
+  constructor(private renderer: Renderer2) { }
+
   @Input() inputName: string = "";
 
   @Input() textError: string = "";
@@ -31,7 +34,7 @@ export class InputComponent {
   labelStyle = {
     display:'block',
     position:'relative',
-    width:'fit-content', 
+    width:'fit-content',
     left:'10px',
     padding:'0px 5px',
     fontWeight: 'normal !important',
@@ -60,6 +63,7 @@ export class InputComponent {
       ...this.labelStyle,
       ...this.labelWithInputValue
     }
+    this.renderer.selectRootElement('input').focus()
   }
 
   handleValue(event: Event){
@@ -78,6 +82,6 @@ export class InputComponent {
         ...this.labelWithOutInputValue
       }
     }
-  } 
+  }
 
 }

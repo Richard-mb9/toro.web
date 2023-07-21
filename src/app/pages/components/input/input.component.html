@@ -1,5 +1,5 @@
 <form>
-    <label [ngStyle]="labelStyle" for={{inputName}} #label>{{inputName}}</label>
+    <label [ngStyle]="labelStyle" for={{inputName}} #label (click)="handleFocus()">{{inputName}}</label>
     <input
         type="text"
         name={{inputName}}

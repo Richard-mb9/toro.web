@@ -43,7 +43,11 @@ button:hover{
 }
 
 .account-data{
-    margin-top: 60px;
-    transition: margin-top 1s;
+    position: absolute;
+    top: 50px;
+    right: 0px;
     z-index: 3;
+    overflow-x: hidden;
+    width: 0px;
+    transition: width 1s;
 }

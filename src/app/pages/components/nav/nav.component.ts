@@ -22,16 +22,16 @@ export class NavComponent {
   account: string = "";
   bank: string = "352"
 
-  marginTopAccountData = "-160px"
+  withAccountData = "0px"
   textButtonShowAccountData = "Exibir dados da conta"
 
   setShowAccountData(){
 
-    if(this.marginTopAccountData === "60px"){
-      this.marginTopAccountData = "-160px"
+    if(this.withAccountData === "150px"){
+      this.withAccountData = "0px"
       this.textButtonShowAccountData = "Exibir dados da conta"
     } else{
-      this.marginTopAccountData = "60px"
+      this.withAccountData = "150px"
       this.textButtonShowAccountData = "Ocultar dados da conta"
     }
   }
@@ -64,6 +64,6 @@ export class NavComponent {
 
   async ngOnInit(){
     await this.loadAccountData();
-    
+
   }
 }
